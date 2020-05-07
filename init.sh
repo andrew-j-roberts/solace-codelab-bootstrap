@@ -36,16 +36,16 @@ if [ ! -f "$markdown_template_filename" ] || [ ! -f "$package_json_filename" ]; 
 fi
 
 # replace placeholder codelab id in markdown template file with name provided by command line argument 
-sed -i \
-  "s/CODELAB_NAME.*/$CODELAB_NAME/g" \
+sed -i '' \
+  -e "s/CODELAB_NAME.*/$CODELAB_NAME/g" \
   $markdown_template_filename
 
 # rename markdown template file 
 mv $markdown_template_filename $codelab_markdown_filename
 
 # replace placeholder codelab name in the watch command with name provided in command line argument
-sed -i \
-  "s/CODELAB_FILENAME/$codelab_markdown_filename/g" \
+sed -i '' \
+  -e "s/CODELAB_FILENAME/$codelab_markdown_filename/g" \
   $package_json_filename
 
 # clean up 
