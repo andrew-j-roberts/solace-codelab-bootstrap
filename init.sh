@@ -20,9 +20,9 @@ fi
 # env variables
 CODELAB_NAME=$1
 # local variables
-codelab_markdown_filename=$CODELAB_NAME.md
-markdown_template_filename=markdown.template
-package_json_filename=package.json
+codelab_markdown_filename="$CODELAB_NAME.md"
+markdown_template_filename="markdown.template"
+package_json_filename="package.json"
 
 # validate that markdown template and package.json still exist
 if [ ! -f "$markdown_template_filename" ] || [ ! -f "$package_json_filename" ]; then
